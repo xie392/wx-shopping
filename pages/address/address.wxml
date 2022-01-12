@@ -1,0 +1,26 @@
+
+<radio-group bindchange="change">
+    <view class="address" wx:for="{{info}}" wx:key="index" wx:if="{{info.length!=0}}">
+        <view class="title">
+            <text class="name">{{item.name}}</text>
+            <text class="phone">{{item.phone}}</text>
+        </view>
+        <view class="details">
+            {{item.address}}
+        </view>
+        <view class="bottom-mod">
+            <radio color="#f36" value="{{index}}" checked="{{item.checked}}"/><text class="{{item.checked?'default':''}}">{{item.checked?"已设为默认":"设为默认"}}</text>    
+            <text class="mod" bindtap="mod" data-index="{{index}}">编辑</text>
+        </view>
+        <text class="iconfont icon-guanbi del" bindtap="del" data-index="{{index}}"></text>
+    </view>
+    <view wx:if="{{info.length==0}}" class="add">
+        <text class="icon-shouhuodizhi iconfont"></text>
+        <text>请添加地址</text>
+        
+    </view>
+</radio-group>
+
+<view class="bottom-btn">
+    <navigator class="button" url="/pages/newaddress/newaddress">添加地址</navigator>
+</view>

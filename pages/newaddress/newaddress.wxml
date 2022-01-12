@@ -1,0 +1,30 @@
+<!--pages/newaddress/newaddress.wxml-->
+<view class="name">
+    <text>收货人</text>
+    <input type="text" placeholder="姓名" placeholder-style="color:#bbb" bindinput="getName" value="{{name}}"/>
+</view>
+<view class="name">
+    <text>联系方式</text>
+    <input type="text" placeholder="手机号码" placeholder-style="color:#bbb" bindinput="getPhone" value="{{phone}}"/>
+</view>
+<view class="name">
+    <text>所在地区</text>
+    <input type="text" placeholder="省市区县、乡镇等" placeholder-style="color:#bbb" bindinput="getArea" value="{{area}}"/>
+    <view>
+        <text class="icon-dingwei1 iconfont icon"></text>
+        <text class="address" bindtap="getlocation">定位</text>
+    </view>
+</view>
+<view class="name text">
+    <text>详细地址</text>
+    <textarea id="txt" placeholder="街道、楼牌号等" placeholder-style="color:#bbb" bindinput="getAddress" value="{{address}}"/>
+</view>
+
+<view class="bottom-default">
+    <text>设置为默认地址</text>
+    <switch type="switch" checked="{{default=='true'?true:false}}" bindchange="check"/>
+</view>
+
+<view class="btn" bindtap="save" wx:if="{{!isShow}}">保存并使用该地址</view>
+<view class="btn" bindtap="mod" wx:if="{{isShow}}" bindtap="mod">修改地址</view>
+<view class="btn del" wx:if="{{isShow}}" bindtap="del">删除地址</view>

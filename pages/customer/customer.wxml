@@ -1,0 +1,28 @@
+<!--pages/customer/customer.wxml-->
+<view class="top-title">
+    <view class="item">
+        <text class="iconfont icon-jiaoyi1 icon"></text>
+        <text>交易/退款</text>
+    </view>
+    <view class="item">
+        <text class="iconfont icon-weixiu icon"></text>
+        <text>维修</text>
+    </view>
+    <view class="item">
+        <text class="iconfont icon-peisong icon"></text>
+        <text>交易/退款</text>
+    </view>
+    <view class="item">
+        <text class="iconfont icon-jiaoyi3 icon"></text>
+        <text>交易/退款</text>
+    </view>
+    <view class="item">
+        <text class="iconfont icon-jiaoyi3 icon"></text>
+        <text>交易/退款</text>
+    </view>
+    <view class="item">
+        <text class="iconfont icon-jiaoyi3 icon"></text>
+        <text>交易/退款</text>
+    </view>
+
+</view>

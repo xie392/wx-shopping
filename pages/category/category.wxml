@@ -1,0 +1,23 @@
+<!--pages/category/category.wxml-->
+<scroll-view class="categoryItem" scroll-y="true" style="height: {{scrollHeight}}px;">
+    <view class="item" wx:for="{{categoryItem}}" wx:key="index">
+        <view class="{{index == num?'con':''}}" data-index="{{index}}" bindtap="setNum">
+            {{item}}
+        </view>
+    </view>
+</scroll-view>
+
+
+<scroll-view class="contentItem" scroll-y="true" style="height: {{scrollHeight}}px;">
+    <view class="content">
+        <view class="ul" wx:for="{{content[num]}}" wx:key="index" wx:if="{{item.children}}">
+           <text class="title">{{item.cat_name}}</text>
+            <view class="li" wx:for="{{item.children}}" wx:key="i" 
+            wx:for-item="ele" bindtap="goClass" data-id="{{ele.cat_id}}">
+                <image src="{{ele.cat_icon}}"></image>
+                <text>{{ele.cat_name}}</text>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+

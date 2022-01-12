@@ -1,0 +1,23 @@
+/* components/tabBar/tabBar.wxss */
+.tabBar image{
+    width: 40rpx;
+    height: 40rpx;
+}
+.tabBar{
+    display: flex;
+    height: 90rpx;
+    background-color: #fff;
+    border-top: 1px solid #F2F2F2;
+}
+.tabBar .item{
+    flex:1;
+    text-align: center;
+}
+.tabBar .item.con text{
+    color:aqua;
+}
+.tabBar .item text{
+    display: block;
+    font-size: 24rpx;
+    color:#aaa;
+}

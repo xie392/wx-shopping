@@ -1,0 +1,33 @@
+<!--pages/search/search.wxml-->
+<view class="serach">
+    <text class="iconfont icon-sousuo1 icon"></text>
+    <input type="text" placeholder="请输入你要搜索的内容" confirm-type="search" bindinput="textChange" value="{{text}}" />
+    <text class="btn" bindtap="search">搜索</text>
+</view>
+
+<view class="history" wx:if="{{historySearch.length!=0}}">
+    <view class="history-search">
+        <text class="txt">历史搜索</text>
+        <text class="icon-shanchu1 iconfont del-icon" bindtap="del" wx:key="index"></text>
+    </view>
+   <view class="history-text">
+        <text wx:for="{{historySearch}}" wx:key="index" bindtap="search" data-text="{{item}}">{{item}}</text>
+   </view>
+</view>
+
+<view class="history" wx:if="{{find.length!=0}}">
+    <view class="history-search">
+        <text class="txt">搜索发现</text>
+    </view>
+   <view class="history-text">
+        <text wx:for="{{find}}" wx:key="index" bindtap="search" data-text="{{item}}">{{item}}</text>
+   </view>
+</view>
+
+<!-- 搜索建议 -->
+<view class="ul">
+    <view class="li" wx:for="{{message}}" wx:key="index" wx:if="{{message!=null}}">
+    <text class="message" bindtap="search" data-text="{{item.goods_name}}">{{item.goods_name}}</text>
+    <text class="iconfont icon-guanbi"bindtap="delSearch" data-index="{{index}}" ></text>
+    </view>
+</view>

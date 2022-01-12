@@ -1,0 +1,29 @@
+<!--components/tabBar/tabBar.wxml-->
+<view class="tabBar">
+    <view class="item {{index == 0?'con':''}}">
+        <image src="/images/shouye1.png"></image>
+        <!-- <image src="/images/shouye.png"></image> -->
+        <text>首页</text>
+    </view>
+    <view class="item {{index == 1?'con':''}}">
+        <image src="/images/huodong1.png"></image>
+        <text>分类</text>
+    </view>
+    <view class="item {{index == 2?'con':''}}">
+        <image src="/images/car1.png"></image>
+        <text>购物车</text>
+    </view>
+    <view class="item {{index == 3?'con':''}}">
+        <image src="/images/wode1.png"></image>
+        <text>我的</text>
+    </view>
+</view>
+
+<button bindtap="setIndex">组件触发事件方法</button>
+
+<!-- 写组件 -->
+<!-- 1.配置组件内json文件 "component":true -->
+<!-- 2.引入页面中json文件下，usingComponents配置组件名称 -->
+<!-- "usingComponents": {
+    "tabBar":"/components/tabBar/tabBar"
+  } -->

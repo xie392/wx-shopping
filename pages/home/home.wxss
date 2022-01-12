@@ -1,0 +1,87 @@
+/* pages/home/home.wxss */
+
+.banner image{
+    width: 100%;
+}
+.category{
+    /* 微信小程序推荐使用布局flex + 百分比写法 */
+    display: flex;
+    flex-wrap: wrap;
+    padding-top:30rpx;
+    background-color: #fff;
+    margin-bottom: 5px;
+}
+
+.category .item{
+    margin-bottom: 30rpx;
+    width: 25%;
+    text-align: center;
+}
+.category .item text{
+    display: block;
+    font-size: 28rpx;
+}
+
+.category image{
+    /* iPhone6 上，屏幕宽度为375px,测量px尺寸乘于2等于rpx */
+    /* 1px = 2rpx */
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.commonTitle{
+    height: 104rpx;
+    line-height: 104rpx;
+    background-color: #fff;
+    font-size: 36rpx;
+    border-bottom: 1px solid #bfbfbf;
+    text-indent: 1em;
+}
+
+.goodslist{
+    display: flex;
+    padding: 20rpx 0px;
+    background-color: #fff;
+    margin-bottom: 2rpx;
+}
+.goodslist .left{
+    width: 240rpx;
+    text-align: center;
+}
+.goodslist .right{
+    /* 剩下宽度分配给右侧 */
+    flex:1;
+    height: 200rpx;
+    /* 相对定位 */
+    position: relative;
+    margin-right: 20rpx;
+}
+
+.goodslist .left image{
+    width: 200rpx;
+    height: 200rpx;
+}
+.goodslist .right image{
+    width: 44rpx;
+    height: 44rpx;
+}
+.goodslist .right .goods_name{
+    font-size: 36rpx;
+    color:#808080;
+    height: 100rpx;
+    /* 溢出隐藏 */
+    overflow: hidden;
+}
+.goodslist .right .goods_address{
+    font-size: 24rpx;
+    color:#929292;
+}
+.goodslist .right .goods_price{
+    font-size: 30rpx;
+    color:#FF1493;
+}
+.goodslist .right .car{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}

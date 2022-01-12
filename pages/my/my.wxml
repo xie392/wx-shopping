@@ -1,0 +1,41 @@
+<!--个人中心-->
+<view class="info">
+    <!-- 没有用户信息授权 -->
+    <block wx:if="{{!hasUserInfo}}">
+        <!-- 判断高版本低版本 -->
+        <button wx:if="{{canIUseGetUserProfile}}"  bindtap="getUserProfile"> 获取头像昵称 </button>
+        <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo">2.10.0以下版本-获取头像昵称</button>
+    </block>
+    <!-- 有用户信息显示头像名称 -->
+    <block wx:else>
+        <view class="photo"> 
+            <image src="{{userInfo.avatarUrl}}"></image>
+        </view>
+        <view class="nickName">
+            {{userInfo.nickName}}
+        </view>
+    </block>
+</view>
+
+<view class="ul">
+    <navigator url="/pages/order/order" hover-class="none" class="li">
+        我的订单
+        <image mode="heightFix" src="/images/icon-arrow.png"></image>
+    </navigator>
+    <navigator url="/pages/address/address" hover-class="none" class="li">
+        我的地址
+        <image mode="heightFix" src="/images/icon-arrow.png"></image>
+    </navigator>
+    <navigator url="/pages/collect/collect" hover-class="none" class="li">
+        我的收藏
+        <image mode="heightFix" src="/images/icon-arrow.png"></image>
+    </navigator>
+    <navigator url="/pages/customer/customer" hover-class="none" class="li">
+        联系客服
+        <image mode="heightFix" src="/images/icon-arrow.png"></image>
+    </navigator>
+    <view class="li">
+        关于我们
+        <image mode="heightFix" src="/images/icon-arrow.png"></image>
+    </view>
+</view>

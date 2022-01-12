@@ -1,0 +1,72 @@
+<!--pages/details/details.wxml-->
+<!-- 轮播图 ctrl+/ -->
+<view class="banner" >
+    <swiper 
+        indicator-dots 
+        indicator-color="#fff" 
+        indicator-active-color="#007AAE"
+        autoplay
+        easing-function="easeInOutCubic"
+        style="height: 375px;"
+    >
+    <!-- wx:for 默认 item index -->
+        <block wx:for="{{goods.goodsImgs}}" wx:key="*this">
+            <swiper-item>
+                <image mode="widthFix" src="{{item.pics_big_url}}"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+
+<!-- 商品详情 -->
+<view class="goods_info">
+    <view class="goods_title">
+        <view class="title">
+            {{goods.goodsName}}
+        </view>
+        <view class="collect">
+            <image src="/images/icon-aixin1.png" bindtap="getCollect" data-id="{{id}}" wx:if="{{!isCollect}}"></image>
+            <image src="/images/icon-aixin.png" wx:else bindtap="getCollect" data-id="{{id}}"></image>
+            <text>{{isCollect?"已收藏":"未收藏"}}</text>
+        </view>
+    </view>
+    <view class="goods_price">
+        <text>￥{{goods.goodsPrice}}</text>
+        <text class="old">￥{{goods.goodsPriceOld}}</text>
+    </view>
+    <view class="bottom">
+        *本产品由 品牌商发货
+    </view>
+</view>
+
+<view class="content"> 
+    <view class="title">商品详情</view>
+    <!-- <image mode="widthFix" src="{{goods.goodsDetails}}"></image> -->
+    <view>
+        <rich-text nodes="{{goods.goodsDetails}}"></rich-text>
+    </view>
+</view>
+
+<!-- 底部导航 -->
+<view class="bottomNav" >
+    <view class="ul">
+        <!-- 第一种跳转 设置类型 open-type="switchTab" -->
+        <!-- <navigator url="/pages/car/car" open-type="switchTab" class="li"></navigator> -->
+        <!-- 第二种设置方法 -->
+        <view class="li" bindtap="goCar">
+            <view class="cart">
+                <image src="/images/car.png"></image>
+                <view class="num">{{num}}</view>
+            </view>
+        </view>
+        <view class="li" bindtap="goHome">
+            前往商城
+        </view>
+        <view class="li" bindtap="setCart">
+            加入购物车
+        </view>
+        <view class="li" bindtap="goPay">
+            前往支付
+        </view>
+    </view>
+</view>
